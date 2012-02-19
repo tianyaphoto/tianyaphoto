@@ -1,4 +1,6 @@
 Rails32project::Application.routes.draw do
+  resources :photos
+
   get "welcome/index"
   get "welcome/form"
   # The priority is based upon order of creation:

@@ -26,6 +26,10 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 
+#upload file
+gem 'carrierwave', '0.5.6'
+gem 'mini_magick','3.3'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
