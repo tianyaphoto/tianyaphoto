@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag  @photo.image_url(:normal), :alt => "#{@photo.content}" %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @photo.content %>
+</p>
+
+<p>
+  <b>Isanimal:</b>
+  <%= @photo.isanimal %>
+</p>
+
+<p>
+  <b>Piid:</b>
+  <%= @photo.piid %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
