@@ -5,13 +5,46 @@
     <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'print.css', :media => 'print' %>
     <!--[if lt IE 8]><%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %><![endif]-->
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag    "welcome", :media => "all" %>
+    <%#= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div class="container">
+      <div id="header" class="span-24 last">
+        <div class="span-8">
+        <h1 id="book_haven">
+          TUPSHE.COM
+        </h1>
+      </div>
+      </div>
+      <hr />
+      <div id="subheader" class="span-24 last">
+        <h3 class="alt">做最专业的生态摄影图片网站.</h3>
+      </div>
 
-    <%= yield %>
+      <hr />
+      <%= yield %>
 
+      <hr />
+      <div id="footer">
+        <div class="span-5 colborder">
+          <ul>
+            <li><a class="quiet" href="#">Read our blog</a></li>
+            <li><a class="quiet" href="#">About us</a></li>
+            <li><a class="quiet" href="#">Visit the Support Forums</a></li>
+
+            <li><a class="quiet" href="#">Submit a Bug</a></li>
+            <li><a class="quiet" href="#">Sign up!</a></li>
+          </ul>
+        </div>
+        <div class="prepend-top push-3 span-8 last">
+          <span class="quiet">Copyright &copy; 2008</span> | 
+          <a href="#" class="quiet">Privacy Policy</a> | 
+          <a href="#" class="quiet">Security Policy</a>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
