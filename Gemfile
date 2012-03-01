@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql'
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +29,12 @@ gem 'therubyracer'
 #upload file
 gem 'carrierwave', '0.5.6'
 gem 'mini_magick','3.3'
+
+group :development do
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' #annotate model
+  gem 'magic_encoding' #add utf-8 format
+  
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

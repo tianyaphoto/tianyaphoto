@@ -3,3 +3,8 @@
 * 2012-2-20完成的工作
 1. 美化页面photos/form, navigate
 2. 增加了welcome.css文件
+
+* 2012-3-1
+1. 修改mysql gem 为 mysql2 gem
+2. 修改了主页和页面的部分链接
+3. 无法处理图片（有待解决）
