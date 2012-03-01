@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -32,8 +33,11 @@ module Rails32project
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
     # Configure the default encoding used in templates for Ruby 1.9.
+    # 一些关于国际化的通用配置
+    config.time_zone = 'Beijing'
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = "zh-CN"
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
@@ -54,6 +58,8 @@ module Rails32project
     config.assets.enabled = false 
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    #config.assets.version = '1.0'
   end
 end
+
+I18n.locale = 'zh-CN'
