@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- encoding : utf-8 -*-
 require "digest/md5"
 require 'carrierwave/processing/mini_magick'
 
@@ -27,22 +27,21 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
 
-  process :resize_to_limit => [680, nil]
-
-  version :normal do
-    process :resize_to_fill => [200,300]
-   # process :scale => [200, 300]
-  end
+#  process :resize_to_limit => [680, nil]
+#
+#  version :normal do
+#    process :resize_to_fill => [200,300]
+#  end
+  
   #
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process :resize_to_limit => [50, 50]
-   # process :scale => [50, 50]
-  end
+#  version :thumb do
+#    process :resize_to_limit => [50, 50]
+#  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

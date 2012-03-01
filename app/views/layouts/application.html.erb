@@ -1,12 +1,14 @@
+<% # encoding: utf-8 %>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails32project</title>
+    <title>生态摄影库</title>
+    <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
     <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'print.css', :media => 'print' %>
     <!--[if lt IE 8]><%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %><![endif]-->
     <%= stylesheet_link_tag    "welcome", :media => "all" %>
-    <%#= javascript_include_tag "application" %>
+<%#= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -19,9 +21,10 @@
         </div>
         <ul class="span-10 last nav nav-pills">
           <li class="active">
-          <a href="#">主页</a>
+            <a href="/">主页</a>
           </li>
-          <li><a href="#">什么是图片社</a></li>
+          <li><a href="/">什么是图片社</a></li>
+          <li><a href="/photos/new">上传图片</a></li>
         </ul>
       </div>
       <hr />
@@ -36,18 +39,16 @@
       <div id="footer">
         <div class="span-5 colborder">
           <ul>
-            <li><a class="quiet" href="#">Read our blog</a></li>
-            <li><a class="quiet" href="#">About us</a></li>
-            <li><a class="quiet" href="#">Visit the Support Forums</a></li>
-
-            <li><a class="quiet" href="#">Submit a Bug</a></li>
-            <li><a class="quiet" href="#">Sign up!</a></li>
+            <li><a class="quiet" href="#">关于我们</a></li>
+            <li><a class="quiet" href="#">联系我们</a></li>
+            <li><a class="quiet" href="#">留言</a></li>
+            <li><a class="quiet" href="#">注册</a></li>
+            <li><a class="quiet" href="#">登录</a></li>
           </ul>
         </div>
         <div class="prepend-top push-3 span-8 last">
-          <span class="quiet">Copyright &copy; 2008</span> | 
-          <a href="#" class="quiet">Privacy Policy</a> | 
-          <a href="#" class="quiet">Security Policy</a>
+          <span class="quiet">Copyright &copy; 2012</span> |
+          <a href="#" class="quiet">生态摄影中心</a>
 
         </div>
       </div>

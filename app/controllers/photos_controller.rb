@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+# coding: utf-8
 class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
@@ -6,7 +8,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @photos }
+      format.json { render :json => @photos }
     end
   end
 
@@ -17,7 +19,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @photo }
+      format.json { render :json => @photo }
     end
   end
 
@@ -28,7 +30,6 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @photo }
     end
   end
 
@@ -37,18 +38,15 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
-  # POST /photos
-  # POST /photos.json
+  #TODO: 上传图片无法处理 process, 也许是mini_magick的问题
   def create
     @photo = Photo.new(params[:photo])
 
     respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render json: @photo, status: :created, location: @photo }
+      if @photo.save!
+        format.html { redirect_to @photo, :notice => '图片上传成功.' }
       else
-        format.html { render action: "new" }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
       end
     end
   end
@@ -60,11 +58,10 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
+        format.html { redirect_to @photo, :notice => 'Photo was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
       end
     end
   end

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Rails32project::Application.routes.draw do
   resources :photos
 
