@@ -1,25 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Image:</b>
-  <%= image_tag  @photo.image_url, :alt => "#{@photo.content}" %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @photo.content %>
-</p>
-
-<p>
-  <b>Isanimal:</b>
-  <%= @photo.isanimal %>
-</p>
-
-<p>
-  <b>Piid:</b>
-  <%= @photo.piid %>
-</p>
-
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<div class="span-24">
+  <% if notice -%>
+    <p id="notice"><%= notice %></p>
+  <% end -%>
+  <div class="span-18">
+    <div class="box overflow_hidden text-center">
+      <%= image_tag  @photo.image_url, :alt => "#{@photo.content}", :width => "640px"  %>
+    </div>
+  </div>
+  <div class="span-6 last">
+    <h6>关于图片的描述</h6>
+    <hr/>
+    <p class="quiet">
+      <%= @photo.content %>
+    </p>
+  </div>
+</div>
