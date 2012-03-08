@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120308143829) do
+ActiveRecord::Schema.define(:version => 20120308145915) do
 
   create_table "photos", :force => true do |t|
-    t.string   "image"
     t.string   "content"
     t.boolean  "isanimal"
     t.string   "piid"
@@ -24,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120308143829) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.integer  "pstate"
   end
 
 end

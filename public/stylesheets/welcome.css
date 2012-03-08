@@ -39,3 +39,10 @@ ul.nav{
 .overflow_hidden{overflow: hidden;}
 .text-center{text-align: center;}
 p.quiet{white-space:normal;overflow: hidden;}
+.image_pane{
+    width:135px;
+    float:left;
+    font-size: 11px;
+    line-height: 1.4em;
+    margin: 5px;
+    padding: 5px;}

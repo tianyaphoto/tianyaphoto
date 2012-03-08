@@ -1,9 +1,12 @@
-<div class="span-24 colborder" id="content">
+<div class="span-24" id="content">
   <% @photos.each do |obj| %>
-    <div class="span-4 overflow_hidden">
+    <div class="image_pane box">
       <a href="<%=photo_path(obj) %>" >
-        <img src="<%=obj.file.url(:thumb)  %>" width="139px" height="139px" />
+        <img src="<%=obj.file.url(:thumb)  %>" />
       </a>
+      <p>
+        <%=obj.content  %>
+      </p>
     </div>
   <% end %>
 </div>
