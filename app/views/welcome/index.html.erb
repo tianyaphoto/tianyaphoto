@@ -2,7 +2,7 @@
   <% @photos.each do |obj| %>
     <div class="span-4 overflow_hidden">
       <a href="<%=photo_path(obj) %>" >
-        <img src="<%=obj.image_url  %>" width="139px" height="139px" />
+        <img src="<%=obj.file.url(:thumb)  %>" width="139px" height="139px" />
       </a>
     </div>
   <% end %>

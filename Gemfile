@@ -27,8 +27,9 @@ gem 'execjs'
 gem 'therubyracer'
 
 #upload file
-gem 'carrierwave', '0.5.6'
-gem 'mini_magick','3.3'
+#gem 'carrierwave', '0.5.6'
+#gem 'mini_magick','3.3'
+gem 'paperclip', "~> 2.7"
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' #annotate model

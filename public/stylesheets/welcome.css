@@ -38,3 +38,4 @@ ul.nav{
 }
 .overflow_hidden{overflow: hidden;}
 .text-center{text-align: center;}
+p.quiet{white-space:normal;overflow: hidden;}

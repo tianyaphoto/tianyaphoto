@@ -4,7 +4,7 @@
   <% end -%>
   <div class="span-18">
     <div class="box overflow_hidden text-center">
-      <%= image_tag  @photo.image_url, :alt => "#{@photo.content}", :width => "640px"  %>
+      <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
     </div>
   </div>
   <div class="span-6 last">
