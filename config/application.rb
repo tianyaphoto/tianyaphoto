@@ -40,6 +40,9 @@ module Rails32project
     config.i18n.default_locale = "zh-CN"
     config.encoding = "utf-8"
 
+    #for devise
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 

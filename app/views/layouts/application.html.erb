@@ -18,19 +18,36 @@
             TUPSHE.COM
           </h1>
         </div>
-        <ul class="span-10 last nav nav-pills">
+        <ul class="span-10 nav nav-pills">
           <li class="active">
             <a href="/">主页</a>
           </li>
           <li><a href="/">什么是图片社</a></li>
           <li><a href="/photos/new">上传图片</a></li>
         </ul>
+        <div class="span-4 last">
+          <% unless user_signed_in? %>
+            <%=link_to "注册", new_user_registration_path  %>
+            <%=link_to "登录", user_session_path  %>
+          <% else %>
+            欢迎你,<%=current_user.username  %>
+            <%=link_to "注销", destroy_user_session_path  %>
+          <% end %>
+        </div>
       </div>
       <hr />
       <div id="subheader" class="span-24 last">
         <h3 class="alt">做最专业的生态摄影图片网站.</h3>
       </div>
       <hr />
+      <div class="span-24">
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert  %>
+          <p class="alert"><%= alert %></p>
+        <% end  %>
+      </div>
       <%= yield %>
       <hr />
       <div id="footer">

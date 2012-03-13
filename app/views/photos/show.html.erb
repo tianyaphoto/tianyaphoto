@@ -1,17 +1,37 @@
 <div class="span-24">
-  <% if notice -%>
-    <p id="notice"><%= notice %></p>
-  <% end -%>
   <div class="span-18">
-    <div class="box overflow_hidden text-center">
+    <div class="box">
+    <div class="overflow_hidden text-center">
       <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
+    </div>
+    <div class="d">
+      <label>【<b>声明</b>】</label>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。
+    </div>
+      <div class="k">
+        <label>关键词:</label>
+        <% @photo.tags.each do |t|   %>
+        <span><%= t.name %></span>
+        <% end  %>
+      </div>
     </div>
   </div>
   <div class="span-6 last">
-    <h6>关于图片的描述</h6>
-    <hr/>
-    <p class="quiet">
-      <%= @photo.content %>
-    </p>
+    <ul class="photo_message">
+      <li>
+        <label>版权所有</label>
+        <a href="#"><%=@photo.user.username  %></a>
+      </li>
+      <li>
+        <h6>图片描述</h6>
+        <hr/>
+        <p class="quiet">
+          <%= @photo.content %>
+        </p>
+      </li>
+      <li>
+        <label>图片唯一编号</label>
+        <%=@photo.piid  %>
+      </li>
+    </ul>
   </div>
 </div>

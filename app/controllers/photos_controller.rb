@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 # coding: utf-8
 class PhotosController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /photos
   # GET /photos.json
   def index
@@ -40,10 +42,10 @@ class PhotosController < ApplicationController
 
   #TODO: 上传图片无法处理 process, 也许是mini_magick的问题
   def create
-    @photo = Photo.new(params[:photo])
+    @photo = current_user.photos.new(params[:photo])
 
     respond_to do |format|
-      if @photo.save!
+      if @photo.save
         format.html { redirect_to @photo, :notice => '图片上传成功.' }
       else
         format.html { render :action => "new" }

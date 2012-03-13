@@ -30,11 +30,12 @@ gem 'therubyracer'
 #gem 'carrierwave', '0.5.6'
 #gem 'mini_magick','3.3'
 gem 'paperclip', "~> 2.7"
+gem 'acts-as-taggable-on', '2.2.1'
+gem 'devise'
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' #annotate model
   gem 'magic_encoding' #add utf-8 format
-  
 end
 
 # To use ActiveModel has_secure_password

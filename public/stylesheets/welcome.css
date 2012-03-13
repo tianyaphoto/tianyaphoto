@@ -45,4 +45,26 @@ p.quiet{white-space:normal;overflow: hidden;}
     font-size: 11px;
     line-height: 1.4em;
     margin: 5px;
-    padding: 5px;}
+    padding: 5px;
+}
+.d{
+    background-color: White;
+    border: 1px solid #E1E1E1;
+    color: #333333;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin: 5px 7px;
+    padding: 3px 0;
+    position: relative;
+    text-align: left;
+}
+ul.photo_message li{
+     list-style: none outside none;
+    margin: 0;
+    padding: 3px;
+    text-align: left;
+}
+.k{
+    margin: 5px 7px;
+    padding: 3px 0;
+}
