@@ -1,23 +1,2 @@
 == 欢迎访问基于Rails3.2的图片系统
 
-* 2012-2-20完成的工作
-1. 美化页面photos/form, navigate
-2. 增加了welcome.css文件
-
-* 2012-3-1
-1. 修改mysql gem 为 mysql2 gem
-2. 修改了主页和页面的部分链接
-3. 无法处理图片（有待解决）
-
-* 2012-3-2
-1. 调整了显示图片页面和首页的部分css + html
-
-* 2012-3-8
-1. 图片上传换成paperclip
-2. 处理一些css的问题, 优化首页【首页使用http://masonry.desandro.com/】
-
-*2012-3-13
-1. 上传图片的model验证【字数，随机号生成单】
-2. 图片的tag(acts-as-taggable-on)
-3. 用户注册与登录(devise)
-4. 用户权限(cancan)
