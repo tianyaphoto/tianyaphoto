@@ -1,36 +1,36 @@
 <div class="span-12">
-<%= form_for(@photo , :html => {:multipart => true }  ) do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-      <ul>
-      <% @photo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <fieldset>
-  <div class="field">
-    <%= f.file_field :file, :class =>"title" %>
-  </div>
-  <div class="field">
-   图片的描述 <br />
-   <%= f.text_area :content, :cols=> 20, :rows => 5 %>
-   <p class="help-block">请至少输入25个字... ...</p>
-  </div>
-  <div class="field">
-    <%= f.check_box :isanimal %>
-    动物&nbsp;&nbsp;
-  </div>
-    <div class="field">
-      关键字<br/>
-      <%= f.text_field :tag_list   %>
-    </div>
-  <div class="actions">
-    <%= f.submit "上传图片" %>
-  </div>
-</fieldset>
+  <%= form_for(@photo , :html => {:multipart => true }  ) do |f| %>
+    <% if @photo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+        <ul>
+          <% @photo.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <fieldset>
+      <div class="field">
+        <%= f.file_field :file, :class =>"title" %>
+      </div>
+      <div class="field">
+        图片的描述 <br />
+        <%= f.text_area :content, :cols=> 20, :rows => 5 %>
+        <p class="help-block">请至少输入25个字... ...</p>
+      </div>
+      <div class="field">
+        <%= f.check_box :isanimal %>
+        动物&nbsp;&nbsp;
+      </div>
+      <div class="field">
+        关键字<br/>
+        <%= f.text_field :tag_list   %>
+      </div>
+      <div class="actions">
+        <%= f.submit "上传图片" %>
+      </div>
+    </fieldset>
   <% end %>
 
 </div>

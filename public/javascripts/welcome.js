@@ -1,4 +1,3 @@
-
 $(function(){
     var $content = $('#content');
     $content.imagesLoaded(function(){

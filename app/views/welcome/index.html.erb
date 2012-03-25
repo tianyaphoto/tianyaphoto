@@ -1,3 +1,9 @@
+<div id="subnav" class="span-24">
+  <%= form_tag welcome_index_path, :method => 'get' do %>
+  <input type="input" class="title" name="k" value="<%= params[:k] %>" />
+  <input class="submit" type="submit" value="搜索" />
+  <% end %>
+</div>
 <div class="span-24" id="content">
   <% @photos.each do |obj| %>
     <div class="image_pane box">
