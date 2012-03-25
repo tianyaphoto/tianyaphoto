@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 # coding: utf-8
 class PhotosController < ApplicationController
+  load_and_authorize_resource :photo
+
   before_filter :authenticate_user!
 
   # GET /photos

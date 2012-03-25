@@ -32,7 +32,8 @@ gem 'therubyracer'
 gem 'paperclip', "~> 2.7"
 gem 'acts-as-taggable-on', '2.2.1'
 gem 'devise'
-gem 'awesome_nested_set'
+gem 'awesome_nested_set', '2.1.2'
+gem 'cancan', '1.6.5'
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' #annotate model
