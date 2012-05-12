@@ -1,5 +1,7 @@
 body {
     background: url("/images/scribble_light.png") repeat scroll 0% 0% transparent;
+    padding-top: 65px;
+    position: relative;
 }
 .help-block {
     color: #999999;
@@ -77,6 +79,10 @@ ul.photo_message li{
 #header{
     width: 100%;
     background-color: #FAF7F7;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
 }
 #subnav{
     padding: 3px;
