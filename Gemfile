@@ -29,14 +29,15 @@ gem 'therubyracer'
 #upload file
 #gem 'carrierwave', '0.5.6'
 #gem 'mini_magick','3.3'
-gem 'paperclip', "~> 2.7"
-gem 'acts-as-taggable-on', '2.2.1'
-gem 'devise'
-gem 'awesome_nested_set', '2.1.2'
-gem 'cancan', '1.6.5'
+gem 'paperclip', "~> 2.7"  #上传图片
+gem 'acts-as-taggable-on', '2.2.1'  #标签
+gem 'awesome_nested_set', '2.1.2' #分类
+
+gem 'devise'  #用户认证
+gem 'cancan', '1.6.5'  #权限认证
 
 group :development do
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' #annotate model
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' #申明模型
   gem 'magic_encoding' #add utf-8 format
 end
 

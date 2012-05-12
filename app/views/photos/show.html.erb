@@ -32,15 +32,20 @@
         <label>图片唯一编号</label>
         <%=@photo.piid  %>
       </li>
-    </ul>
-    <div class="span-6">
-      <h3>图片管理</h3>
-      <% if can? :update, @photo %>
-        <%= link_to "修改",  edit_photo_path(@photo)  %>
-      <% end %>
       <% if can? :destory, @photo %>
-        <%= link_to "删除", @photo, :confirm => "确认删除么?" , :method => :delete   %>
-      <% end %>
+        <li>
+          <h6>操作</h6>
+          <p>
+            <%= link_to "修改",  edit_photo_path(@photo)  %>
+            <%= link_to "删除", @photo, :confirm => "确认删除么?" , :method => :delete   %>
+          </p>
+        </li>
+      <% end  %>
+    </ul>
+    <div class="span6 photo_main">
+      <h6>下载图片</h6>
+      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn btn-large btn-primary">下载</a>
     </div>
+
   </div>
 </div>

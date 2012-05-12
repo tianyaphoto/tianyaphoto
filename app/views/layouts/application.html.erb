@@ -12,29 +12,30 @@
   </head>
   <body>
     <div id="header" class="span-24 last">
-        <div class="span-5 log">
-          <h1 id="book_haven">
-            <a href="/"> 图片社</a>
-          </h1>
-        </div>
-        <ul class="span-10 nav nav-pills">
-          <li class="active">
-            <a href="/">主页</a>
-          </li>
-          <li><a href="/">什么是图片社</a></li>
-          <li><a href="/photos/new">上传图片</a></li>
-        </ul>
-        <div class="span-4 right last">
-          <% unless user_signed_in? %>
-            <%=link_to "注册", new_user_registration_path  %>
-            <%=link_to "登录", user_session_path  %>
-          <% else %>
-            欢迎你,<%=current_user.username  %>
-            <%=link_to "注销", destroy_user_session_path  %>
-          <% end %>
-        </div>
+      <div class="span-5 log">
+        <h1 id="book_haven">
+          <a href="/"> 图片社</a>
+        </h1>
       </div>
-      <hr />
+      <ul class="span-10 nav nav-pills">
+        <li class="active">
+          <a href="/">主页</a>
+        </li>
+        <li><a href="/">分类</a></li>
+        <li><a href="/">标签</a></li>
+        <li><a href="/photos/new">上传图片</a></li>
+      </ul>
+      <div class="span-4 right last">
+        <% unless user_signed_in? %>
+          <%=link_to "注册", new_user_registration_path  %>
+          <%=link_to "登录", user_session_path  %>
+        <% else %>
+          欢迎你,<%=current_user.username  %>
+          <%=link_to "注销", destroy_user_session_path  %>
+        <% end %>
+      </div>
+    </div>
+    <hr />
     <div class="container mainpain">
       <div class="span-24">
         <% if notice %>

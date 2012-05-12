@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120325061510) do
+ActiveRecord::Schema.define(:version => 20120512064436) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -27,14 +27,15 @@ ActiveRecord::Schema.define(:version => 20120325061510) do
     t.string   "content"
     t.boolean  "isanimal"
     t.string   "piid"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.integer  "pstate"
     t.integer  "user_id"
+    t.integer  "category_id",       :default => 0
   end
 
   create_table "taggings", :force => true do |t|

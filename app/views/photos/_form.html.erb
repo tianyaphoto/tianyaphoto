@@ -20,17 +20,16 @@
         <p class="help-block">请至少输入25个字... ...</p>
       </div>
       <div class="field">
-        <%= f.check_box :isanimal %>
-        动物&nbsp;&nbsp;
-      </div>
-      <div class="field">
         关键字<br/>
         <%= f.text_field :tag_list, :class => "text"  %>
+      </div>
+      <div class="field">
+        分类<br/>
+        <%= f.select 'category_id', options_for_select(nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" } ) %>
       </div>
       <div class="actions">
         <%= f.submit "上传图片" %>
       </div>
     </fieldset>
   <% end %>
-
 </div>

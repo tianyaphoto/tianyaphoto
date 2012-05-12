@@ -39,7 +39,7 @@ class PhotosController < ApplicationController
 
   #TODO: 上传图片无法处理 process, 也许是mini_magick的问题
   def create
-
+    @photo = current_user.photos.new(params[:photo])
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, :notice => '图片上传成功.' }
