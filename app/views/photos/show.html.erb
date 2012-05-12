@@ -1,16 +1,16 @@
 <div class="span-24">
   <div class="span-18">
     <div class="box">
-    <div class="overflow_hidden text-center">
-      <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
-    </div>
-    <div class="d">
-      <label>【<b>声明</b>】</label>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。
-    </div>
+      <div class="overflow_hidden text-center">
+        <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
+      </div>
+      <div class="d">
+        <label>【<b>声明</b>】</label>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。
+      </div>
       <div class="k">
         <label>关键词:</label>
         <% @photo.tags.each do |t|   %>
-        <span><%= t.name %></span>
+          <span><%= t.name %></span>
         <% end  %>
       </div>
     </div>
@@ -33,5 +33,14 @@
         <%=@photo.piid  %>
       </li>
     </ul>
+    <div class="span-6">
+      <h3>图片管理</h3>
+      <% if can? :update, @photo %>
+        <%= link_to "修改",  edit_photo_path(@photo)  %>
+      <% end %>
+      <% if can? :destory, @photo %>
+        <%= link_to "删除", @photo, :confirm => "确认删除么?" , :method => :delete   %>
+      <% end %>
+    </div>
   </div>
 </div>

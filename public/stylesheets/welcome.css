@@ -84,3 +84,4 @@ ul.photo_message li{
 .log{padding: 5px;}
 .log a {text-decoration: none;}
 .mainpain { background-color: #FAF7F7;}
+form fieldset{ border: none; border-right: 1px solid #cccccc; }

@@ -8,7 +8,6 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +18,6 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-    @photo = Photo.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,8 +28,6 @@ class PhotosController < ApplicationController
   # GET /photos/new
   # GET /photos/new.json
   def new
-    @photo = Photo.new
-
     respond_to do |format|
       format.html # new.html.erb
     end
@@ -39,12 +35,10 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
-    @photo = Photo.find(params[:id])
   end
 
   #TODO: 上传图片无法处理 process, 也许是mini_magick的问题
   def create
-    @photo = current_user.photos.new(params[:photo])
 
     respond_to do |format|
       if @photo.save
@@ -58,11 +52,10 @@ class PhotosController < ApplicationController
   # PUT /photos/1
   # PUT /photos/1.json
   def update
-    @photo = Photo.find(params[:id])
 
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
-        format.html { redirect_to @photo, :notice => 'Photo was successfully updated.' }
+        format.html { redirect_to @photo, :notice => '图片已经被成功修改!' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -73,7 +66,6 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    @photo = Photo.find(params[:id])
     @photo.destroy
 
     respond_to do |format|

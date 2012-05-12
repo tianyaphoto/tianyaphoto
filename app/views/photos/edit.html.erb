@@ -1,6 +1,9 @@
-<h1>Editing photo</h1>
+<h1>修改图片</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @photo %> |
-<%= link_to 'Back', photos_path %>
+<div class="span12">
+  原始图片<br/>
+  <%= image_tag @photo.file.url(:medium)  %>
+</div>
+

@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    true
+    self.id == 1
   end
 
   
