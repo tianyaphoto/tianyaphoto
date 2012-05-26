@@ -13,3 +13,14 @@
  *= require welcome
  *= require_self
 */
+.field label{
+    display: block;
+    width: 100px;
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    line-height: 3.5em;
+}
+.register-form{
+    margin: 0 0 20px 200px ;
+}
