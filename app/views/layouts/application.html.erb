@@ -3,10 +3,8 @@
 <html>
   <head>
     <title>生态摄影库</title>
-    <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
-    <%= stylesheet_link_tag 'print.css', :media => 'print' %>
-    <!--[if lt IE 8]><%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %><![endif]-->
-    <%= stylesheet_link_tag    "welcome", :media => "all" %>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+      <!--[if lt IE 8]><%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %><![endif]-->
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -30,7 +28,7 @@
           <%=link_to "登录", user_session_path  %>
         <% else %>
           欢迎你,<%=current_user.username  %>
-          <%=link_to "注销", destroy_user_session_path  %>
+          <%=link_to "注销", destroy_user_session_path, :method => :delete   %>
         <% end %>
       </div>
     </div>
@@ -62,6 +60,6 @@
         </div>
       </div>
     </div>
-    <%= javascript_include_tag "jquery", "jquery.masonry.min","welcome" %>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

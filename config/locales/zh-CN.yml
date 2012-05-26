@@ -2,10 +2,15 @@
 "zh-CN":
   models:
     photo: 图片
+    user: 用户
   attributes:
     photo:
       image: 图片
       content: 图片描述
+    user:
+      email: 邮箱
+      password: 密码
+      username: 姓名
   activerecord:
     errors:
       full_messages:
