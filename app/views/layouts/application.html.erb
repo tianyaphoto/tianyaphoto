@@ -7,7 +7,6 @@
     <%= stylesheet_link_tag 'print.css', :media => 'print' %>
     <!--[if lt IE 8]><%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %><![endif]-->
     <%= stylesheet_link_tag    "welcome", :media => "all" %>
-    <%= javascript_include_tag "jquery", "jquery.masonry.min","welcome" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -63,5 +62,6 @@
         </div>
       </div>
     </div>
+    <%= javascript_include_tag "jquery", "jquery.masonry.min","welcome" %>
   </body>
 </html>

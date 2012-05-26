@@ -3,7 +3,7 @@
 class PhotosController < ApplicationController
   load_and_authorize_resource :photo
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => "show"
 
   # GET /photos
   # GET /photos.json
@@ -52,7 +52,7 @@ class PhotosController < ApplicationController
   # PUT /photos/1
   # PUT /photos/1.json
   def update
-
+    @photo = Photo.accessible_by(current_ability).find(params[:id])
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
         format.html { redirect_to @photo, :notice => '图片已经被成功修改!' }

@@ -19,7 +19,7 @@
     <ul class="photo_message">
       <li>
         <label>版权所有</label>
-        <a href="#"><%=@photo.user.username  %></a>
+        <a href="#"><%=@photo.user.try(:username) || '本网站'  %></a>
       </li>
       <li>
         <h6>图片描述</h6>
