@@ -1,0 +1,19 @@
+"zh-CN":
+  feedback_popup:
+    title: "意见反馈"
+    send_button: "提交"
+    message_sent: "谢谢!"
+    email:
+      subject: "意见反馈的消息"
+  activemodel:
+    models:
+      feedback_popup/message: '消息'
+    attributes:
+      feedback_popup/message:
+        body: '消息内容'
+    errors:
+      models:
+        feedback_popup/message:
+          attributes:
+            body:
+              blank: "不能为空"

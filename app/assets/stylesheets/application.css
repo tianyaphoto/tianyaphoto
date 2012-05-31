@@ -11,8 +11,12 @@
  *
  *= require screen
  *= require welcome
+ *= require feedback_popup
  *= require_self
 */
+#feedback_popup {
+    z-index: 9999;
+}
 .field label{
     display: block;
     width: 100px;
