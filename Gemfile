@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,10 +21,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem "thin"
 
 gem 'execjs'
 gem 'therubyracer'
+
 
 #upload file
 #gem 'carrierwave', '0.5.6'
@@ -43,6 +44,7 @@ group :development do
   gem 'magic_encoding' #add utf-8 format
 end
 
+gem 'quiet_assets', "1.0.1"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
