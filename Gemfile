@@ -1,4 +1,5 @@
 source 'http://ruby.taobao.org'
+#source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
@@ -45,6 +46,11 @@ group :development do
 end
 
 gem 'quiet_assets', "1.0.1"
+
+#搜索
+gem 'sunspot_rails'
+gem 'sunspot_solr' 
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

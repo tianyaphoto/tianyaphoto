@@ -18,5 +18,13 @@ class Photo < ActiveRecord::Base
     piid = Digest::MD5.hexdigest(Time.now.to_i.to_s)
     user.update_attribute(:piid, piid)
   end
+
+  searchable do
+    text :content
+    text :tag_list do
+      tag_list {|tag| tag.context  }
+    end
+    integer :category_id 
+  end
   
 end
