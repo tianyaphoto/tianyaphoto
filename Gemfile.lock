@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/chucai/feedback_popup.git
+  revision: a923d6ab1b12eb2f746e9fa1cb50807f5822c68d
+  specs:
+    feedback_popup (0.0.1)
+      rails (~> 3.0)
+
+GIT
   remote: git://github.com/ctran/annotate_models.git
   revision: a43c08f0eb4d69a48c6830630ebb60e35ccb2d2d
   specs:
@@ -139,6 +146,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   execjs
+  feedback_popup!
   jquery-rails
   magic_encoding
   mysql2
