@@ -16,12 +16,15 @@
         </h1>
       </div>
       <ul class="span-10 nav nav-pills">
-        <li class="active">
+        <li <% if controller_name == "welcome"%> class="active" <% end %> >
           <a href="/">主页</a>
         </li>
-        <li><a href="/">分类</a></li>
-        <li><a href="/">标签</a></li>
-        <li><a href="/photos/new">上传图片</a></li>
+        <li  <% if controller_name == "category"%> class="active" <% end %> >
+          <a href="/category">分类</a>
+        </li>
+        <% if user_signed_in?  %>
+          <li><a href="/photos/new">上传图片</a></li>
+        <% end %>
       </ul>
       <div class="span-4 right last">
         <% unless user_signed_in? %>

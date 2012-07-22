@@ -1,6 +1,10 @@
 == 欢迎访问基于Rails3.2的图片系统
 全文本服务器sunspot启动命令: bundle exec rake sunspot:solr:start 
 
+* 分类首页
+* tag首页
+* 分类的ajax页面
+
 ==完成的功能
 * 国际化
 * cancan权限控制
