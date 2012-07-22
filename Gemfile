@@ -40,11 +40,6 @@ gem 'cancan', '1.6.5'  #权限认证
 
 gem 'feedback_popup', :git => "git://github.com/chucai/feedback_popup.git" #收集用户反馈
 
-group :development do
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' #申明模型
-  gem 'magic_encoding' #add utf-8 format
-end
-
 gem 'quiet_assets', "1.0.1"
 
 #搜索
