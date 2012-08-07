@@ -13,7 +13,6 @@
 * 上传图片
 * devise 用户认证
 * 搜索图片
-* 增加用户反馈模块
 
 ==将要添加的功能
 * category 看图片
@@ -25,6 +24,10 @@
 * 搜索引擎优化
 * sitemap生成
 * 图片显示页面的相关图片
+* 删除feedback
+* 图片处理放到后台
+* solor处理放到后台
+* paperclip 替换为 carrierwave 
 
 ==技术方案选择
 * JQuery页面滚动

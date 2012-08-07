@@ -1,18 +1,16 @@
-<div id="subnav" class="span-24">
-  <%= form_tag welcome_index_path, :method => 'get' do %>
-  <input type="input" class="title" name="k" value="<%= params[:k] %>" />
-  <input class="submit" type="submit" value="搜索" />
-  <% end %>
-</div>
-<div class="span-24" id="content">
-  <% @photos.each do |obj| %>
-    <div class="image_pane box">
-      <a href="<%=photo_path(obj) %>" >
-        <img src="<%=obj.file.url(:thumb)  %>" />
-      </a>
-      <p>
-        <%=obj.content  %>
-      </p>
-    </div>
-  <% end %>
-</div>
+
+  <ul class="thumbnails">
+  <% 1.upto 5 do%>
+     <% @photos.each do |obj| %>
+        <li class="span3">
+          <div class="thumbnail">
+            <a href="/photos/<%=obj.id %>"><img alt="" src="<%=obj.file.url(:thumb)  %>" width="260" height="180"></a>
+            <div class="caption">
+              <h5><%=obj.category.name %></h5>
+              <p> <%=obj.content  %></p>
+            </div>
+          </div>
+        </li>
+          <% end %>
+             <% end %>
+</ul>

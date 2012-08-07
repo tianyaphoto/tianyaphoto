@@ -24,8 +24,8 @@ end
 gem 'jquery-rails'
 gem "thin"
 
-gem 'execjs'
-gem 'therubyracer'
+#gem 'execjs'
+#gem 'therubyracer'
 
 
 #upload file
@@ -45,6 +45,13 @@ gem 'quiet_assets', "1.0.1"
 #搜索
 gem 'sunspot_rails'
 gem 'sunspot_solr' 
+
+
+#bootstrap
+gem 'anjlab-bootstrap-rails', '2.0.3.2', :require => 'bootstrap-rails'
+gem 'bootstrap-will_paginate', '0.0.3'
+gem 'bootstrap_helper', "1.4.1"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

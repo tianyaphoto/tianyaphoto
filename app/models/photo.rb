@@ -11,6 +11,7 @@ class Photo < ActiveRecord::Base
   validates :content,:presence => true, :length => { :minimum => 25 }
 
   belongs_to :user
+  belongs_to :category
 
   #生成唯一的piid号
   after_create do |user|

@@ -1,5 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require feedback_popup
+//= require bootstrap
 //= require jquery.masonry.min
 //= require welcome
