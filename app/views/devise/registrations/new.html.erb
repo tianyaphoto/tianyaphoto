@@ -1,35 +1,48 @@
-<div class="span-13 register-form">
-  <h2>新用户注册</h2>
+<div class="devise-form well">
 
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="field span-12">
-      <%= f.label :email, "邮箱" %>
-      <%= f.email_field :email, :class => "title", :placeholder => "请使用常用邮箱注册" %>
-     
-    </div>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "form-horizontal" }) do |f| %>
+    <%= render "share/error_message", :target => resource %>
+    <fieldset>
+      <legend>注册新用户</legend>
+      <div class="control-group">
+        <%= f.label :email, "邮箱", :class => "control-label" %>
+        <div class="controls">
+          <%= f.email_field :email, :class => "input-xlarge", :placeholder => "请使用常用邮箱注册" %>
+          <!--       
+          <div class="help-block">
+            建议使用常用邮箱,以后不可修改.
+          </div>
+    -->
+        </div>
+      </div>
 
-    <div class="field span-12">
-       <%= f.label :username, "姓名" %>
-      <%= f.text_field :username, :class => "title", :placeholder => "请填写您的真实姓名" %>
-     
-    </div>
+      <div class="control-group">
+        <%= f.label :username, "姓名", :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :username,  :class => "input-xlarge", :placeholder => "请填写您的真实姓名" %>
+        </div>
+      </div>
 
 
-    <div class="field span-12">
-          <%= f.label :password, "密码" %>
-      <%= f.password_field :password, :class => "title", :placeholder => "密码最少需要6位" %>
-  
-    </div>
+      <div class="control-group">
+        <%= f.label :password, "密码", :class => "control-label" %>
+        <div class="controls">
+          <%= f.password_field :password,  :class => "input-xlarge", :placeholder => "密码最少需要6位" %>
+        </div>
+      </div>
 
-    <div class="field span-12">
-       <%= f.label :password_confirmation, "确认密码" %>
-      <%= f.password_field :password_confirmation, :class => "title" %>
-     
-    </div>
+      <div class="control-group">
+        <%= f.label :password_confirmation, "确认密码", :class => "control-label" %>
+        <div class="controls">
+          <%= f.password_field :password_confirmation, :class => "input-xlarge" %>
+        </div>
+      </div>
 
-    <div class="field span-12"><%= f.submit "注册" %><label>&nbsp;</label> 或 <%= link_to "登录", new_session_path(resource_name) %></div>
+      <div class="form-actions">
+        <%= f.submit "注册", :class => "btn btn-primary" %> 或 <%= link_to "登录", new_session_path(resource_name) %>
+      </div>
+    </fieldset>
   <% end %>
 
- 
+
 </div>

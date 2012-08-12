@@ -53,6 +53,12 @@ gem 'bootstrap-will_paginate', '0.0.3'
 gem 'bootstrap_helper', "1.4.1"
 
 
+group :development, :test do
+	gem "guard"
+	gem "guard-livereload"
+	gem "rack-livereload"
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

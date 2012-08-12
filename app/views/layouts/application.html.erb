@@ -22,48 +22,48 @@
             <div class="nav-collapse">
               <ul class="nav">
                 <li class="active"><a href="/">首页</a></li>
-                <li><%=link_to "分类", category_index_path %></li>
+                <!--    <li><%=link_to "分类", category_index_path %></li> -->
               </ul>
-                 <%= form_tag welcome_index_path, :method => 'get', :class => "navbar-search pull-left" do %>
-                <input type="text" placeholder="搜索" name="k" value="" class="search-query span2">
-             <% end %>
+              <%= form_tag welcome_index_path, :method => 'get', :class => "navbar-search pull-left" do %>
+                <input type="text" placeholder="搜索" name="k" value="" class="search-query input-xlarge span2">
+              <% end %>
               <ul class="nav pull-right">
-              <% unless user_signed_in? %>
-              <li><%=link_to "注册", new_user_registration_path  %></li>
-              <li> <%=link_to "登录", user_session_path  %></li>
-              <% else %>
-              <li><%=link_to "注销", destroy_user_session_path, :method => "delete"  %></li>
-                <li class="divider-vertical"></li>
-                <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= current_user.username %> <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                <li><%=link_to "上传图片", new_photo_path %> </li>
-                </ul>
-                </li>
-              <% end -%>
+                <% unless user_signed_in? %>
+                  <li><%=link_to "注册", new_user_registration_path  %></li>
+                  <li> <%=link_to "登录", user_session_path  %></li>
+                <% else %>
+                  <li><%=link_to "注销", destroy_user_session_path, :method => "delete"  %></li>
+                  <li class="divider-vertical"></li>
+                  <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= current_user.username %> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%=link_to "上传图片", new_photo_path %> </li>
+                  </ul>
+                  </li>
+                <% end -%>
               </ul>
             </div>
           </div>
         </div>
       </div>
-        </div>
-      <div class="container">
-          <% if notice %>
-          <div class="alert alert-success"><%= notice %></div>
-          <% end %>
-          <% if alert  %>
-            <div class="alert alert-error"><%= alert %></div>
-          <% end  %>
-        </div>
-        <div class="container">
-        <%= yield %>
-      </div>
-      <div class="container">
-            <span class="quiet">Copyright &copy; 2012</span> |
-            <a href="/" class="quiet">生态摄影中心</a>
-   
-      </div>
-  
+    </div>
+    <div class="container">
+      <% if notice %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% end %>
+      <% if alert  %>
+        <div class="alert alert-error"><%= alert %></div>
+      <% end  %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="container">
+      <span class="quiet">Copyright &copy; 2012</span> |
+      <a href="/" class="quiet">生态摄影中心</a>
+
+    </div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

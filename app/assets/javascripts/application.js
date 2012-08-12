@@ -3,3 +3,4 @@
 //= require bootstrap
 //= require jquery.masonry.min
 //= require welcome
+//= require main

@@ -1,50 +1,56 @@
-<div class="span-24">
-  <div class="span-18">
-    <div class="box">
-      <div class="overflow_hidden text-center">
-        <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
-      </div>
-      <div class="d">
-        <label>【<b>声明</b>】</label>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。
-      </div>
-      <div class="k">
-        <label>关键词:</label>
-        <% @photo.tags.each do |t|   %>
-          <span><%= t.name %></span>
-        <% end  %>
+<div class="row">
+  <div class="span7">
+    <div class="well thumbnail">
+      <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
+      <div class="caption">
+        <h5>网站申明</h5>
+        <p>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。</p>
       </div>
     </div>
   </div>
-  <div class="span-6 last">
-    <ul class="photo_message">
+  <div class="span5">
+    <ul class="photo_message box">
       <li>
-        <label>版权所有</label>
-        <a href="#"><%=@photo.user.try(:username) || '本网站'  %></a>
+        <h6>版权所有</h6>
+        <p> 
+          <a href="#"><%=@photo.user.try(:username) || '本网站'  %></a>
+        </p>
       </li>
       <li>
         <h6>图片描述</h6>
-        <hr/>
-        <p class="quiet">
+        <p>
           <%= @photo.content %>
         </p>
       </li>
       <li>
-        <label>图片唯一编号</label>
-        <%=@photo.piid  %>
+      <h6>图片唯一编号</h6>
+      <p>
+      <%=@photo.piid  %>
+      </p>
       </li>
       <% if can? :destory, @photo %>
         <li>
           <h6>操作</h6>
           <p>
-            <%= link_to "修改",  edit_photo_path(@photo)  %>
-            <%= link_to "删除", @photo, :confirm => "确认删除么?" , :method => :delete   %>
+          <%= link_to "修改",  edit_photo_path(@photo), :class => "btn"  %>
+          <%= link_to "删除", @photo, :confirm => "确认删除么?" , :method => :delete, :class => "btn btn-danger"   %>
           </p>
         </li>
       <% end  %>
     </ul>
-    <div class="span6 photo_main">
+    <div class="box">
       <h6>下载图片</h6>
-      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn btn-large btn-primary">下载</a>
+      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn  btn-primary">下载</a>
+      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn  btn-danger">购买大图</a>
+    </div>
+
+    <div class="box">
+      <h6>关键词</h6>
+      <p>
+      <% @photo.tags.each do |t|   %>
+          <span><%= t.name %></span>
+        <% end  %>
+      </p>
     </div>
 
   </div>

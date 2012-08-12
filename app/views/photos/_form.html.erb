@@ -1,35 +1,40 @@
-<div class="span-12">
-  <%= form_for(@photo , :html => {:multipart => true }  ) do |f| %>
-    <% if @photo.errors.any? %>
-      <div id="error_explanation">
-        <p><strong>有 <%= @photo.errors.count %> 处问题导致无法保存数据:</strong></p>
-        <ul>
-          <% @photo.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
+<div class="row">
+  <div class="span10 well">
+    <%= form_for(@photo , :html => {:multipart => true, :class => "form-horizontal" }  ) do |f| %>
+      <%= render "share/error_message", :target => @photo %>
+      <fieldset>
+        <legend>上传图片</legend>
+        <div class="control-group">
+          <%= f.label :file, "图片文件", :class => "control-label" %>
+          <div class="controls">
+            <%= f.file_field :file, :class =>"input-xlarge" %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :content, "图片的描述", :class => "control-label" %>
+          <div class="controls">
+            <%= f.text_area :content, :class => "input-xlarge", :rows => 3 %>
+          <div class="help-block">请至少输入25个字... ...</div>
+        </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :tag_list, "关键字", :class => "control-label" %>
+          <div class="controls">
+            <%= f.text_field :tag_list, :class => "input-xlarge", :placeholder => "请以逗号(,)隔开"  %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :category_id,  "图片分类", :class => "control-label" %>
+          <div class="controls">
+            <%= f.select 'category_id', options_for_select(nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" } ), { :class => "input-xlarge" } %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "上传图片", :class => "btn btn-primary" %>
+          &nbsp; Or? &nbsp;
+          <%= link_to "取消", root_path, :class => "btn" %>
+        </div>
+      </fieldset>
     <% end %>
-    <fieldset>
-      <div class="field">
-        <%= f.file_field :file, :class =>"title" %>
-      </div>
-      <div class="field">
-        图片的描述 <br />
-        <%= f.text_area :content, :cols=> 20, :rows => 5 %>
-        <p class="help-block">请至少输入25个字... ...</p>
-      </div>
-      <div class="field">
-        关键字<br/>
-        <%= f.text_field :tag_list, :class => "text"  %>
-      </div>
-      <div class="field">
-        分类<br/>
-        <%= f.select 'category_id', options_for_select(nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" } ) %>
-      </div>
-      <div class="actions">
-        <%= f.submit "上传图片" %>
-      </div>
-    </fieldset>
-  <% end %>
+  </div>
 </div>

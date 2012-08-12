@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
   def index
     key = params[:k]
     number = 18
+    page = params[:page] || 1
     if key
       #@photos = Photo.where("content like ?", "%#{key}%").limit(number).order("created_at DESC")
       @photos = Photo.search do 
