@@ -62,6 +62,7 @@ module Rails32project
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.assets.precompile += %w()
 
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.gmail.com',
