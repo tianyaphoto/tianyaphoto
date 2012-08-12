@@ -38,8 +38,6 @@ gem 'awesome_nested_set', '2.1.2' #分类
 gem 'devise'  #用户认证
 gem 'cancan', '1.6.5'  #权限认证
 
-gem 'feedback_popup', :git => "git://github.com/chucai/feedback_popup.git" #收集用户反馈
-
 gem 'quiet_assets', "1.0.1"
 
 #搜索
