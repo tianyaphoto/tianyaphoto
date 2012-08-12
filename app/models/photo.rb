@@ -1,5 +1,8 @@
 # -*- encoding : utf-8 -*-
 class Photo < ActiveRecord::Base
+
+  self.per_page = 16
+
   #mount_uploader :image, ImageUploader
   has_attached_file :file, :styles => {:main => "680x480>", :medium => "300x300>", :thumb => "217x", :little => "100x100#" }
 

@@ -195,3 +195,4 @@ DEPENDENCIES
   sunspot_solr
   thin
   uglifier (>= 1.0.3)
+  will_paginate

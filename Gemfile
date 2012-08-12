@@ -44,6 +44,7 @@ gem 'quiet_assets', "1.0.1"
 gem 'sunspot_rails'
 gem 'sunspot_solr' 
 
+gem 'will_paginate'
 
 #bootstrap
 gem 'anjlab-bootstrap-rails', '2.0.3.2', :require => 'bootstrap-rails'

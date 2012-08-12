@@ -4,15 +4,14 @@ class WelcomeController < ApplicationController
   
   def index
     key = params[:k]
-    number = 18
+    number = 16
     page = params[:page] || 1
     if key
-      #@photos = Photo.where("content like ?", "%#{key}%").limit(number).order("created_at DESC")
       @photos = Photo.search do 
         fulltext key
       end.results
     else
-      @photos = Photo.limit(number).order("created_at DESC")
+      @photos = Photo.paginate(:page => page).order("created_at DESC")
     end
   end
 
