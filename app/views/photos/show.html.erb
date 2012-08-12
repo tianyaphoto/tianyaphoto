@@ -1,26 +1,33 @@
 <div class="row">
   <div class="span7">
-    <div class="well thumbnail">
-      <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
-      <div class="caption">
-        <h5>网站申明</h5>
-        <p>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。</p>
+      <div class="breadcrumb">
+        图片分类: 
+        <%= @cates.reverse.collect(&:name).join("  >  ") %>
       </div>
-    </div>
+      <div class="thumbnail">
+        <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
+        <div class="caption">
+          <h5>网站申明</h5>
+          <p>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。</p>
+        </div>
+      </div>
   </div>
   <div class="span5">
+    <div class="breadcrumb">
+      <span class="icon-picture"></span>图片信息
+    </div>
     <ul class="photo_message box">
       <li>
-        <h6>版权所有</h6>
-        <p> 
-          <a href="#"><%=@photo.user.try(:username) || '本网站'  %></a>
-        </p>
+      <h6>版权所有</h6>
+      <p> 
+      <span class="icon-user"></span><a href="#" ><%=@photo.user.try(:username) || '本网站'  %></a>
+      </p>
       </li>
       <li>
-        <h6>图片描述</h6>
-        <p>
-          <%= @photo.content %>
-        </p>
+      <h6>图片描述</h6>
+      <p>
+      <%= @photo.content %>
+      </p>
       </li>
       <li>
       <h6>图片唯一编号</h6>
@@ -30,11 +37,11 @@
       </li>
       <% if can? :destory, @photo %>
         <li>
-          <h6>操作</h6>
-          <p>
-          <%= link_to "修改",  edit_photo_path(@photo), :class => "btn"  %>
-          <%= link_to "删除", @photo, :confirm => "确认删除么?" , :method => :delete, :class => "btn btn-danger"   %>
-          </p>
+        <h6>操作</h6>
+        <p>
+        <%= link_to "修改",  edit_photo_path(@photo), :class => "btn"  %>
+        <%= link_to "删除", @photo, :confirm => "确认删除么?" , :method => :delete, :class => "btn btn-danger"   %>
+        </p>
         </li>
       <% end  %>
     </ul>
@@ -48,8 +55,8 @@
       <h6>关键词</h6>
       <p>
       <% @photo.tags.each do |t|   %>
-          <span><%= t.name %></span>
-        <% end  %>
+        <span><%= t.name %></span>
+      <% end  %>
       </p>
     </div>
 

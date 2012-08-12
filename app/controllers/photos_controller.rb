@@ -18,7 +18,11 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-
+    @cates = []
+    cate = @photo.category
+    @cates << cate
+    @cates << cate.parent if cate.depth > 0
+    @cates << cate.root if cate.depth > 1
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @photo }
@@ -37,12 +41,11 @@ class PhotosController < ApplicationController
   def edit
   end
 
-  #TODO: 上传图片无法处理 process, 也许是mini_magick的问题
   def create
     @photo = current_user.photos.new(params[:photo])
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, :notice => '图片上传成功.' }
+        format.html { redirect_to new_photo_path, :notice => '图片上传成功.' }
       else
         format.html { render :action => "new" }
       end
