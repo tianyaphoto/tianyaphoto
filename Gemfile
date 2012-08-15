@@ -51,6 +51,8 @@ gem 'anjlab-bootstrap-rails', '2.0.3.2', :require => 'bootstrap-rails'
 gem 'bootstrap-will_paginate', '0.0.3'
 gem 'bootstrap_helper', "1.4.1"
 
+#social
+gem 'social-share-button'
 
 group :development, :test do
 	gem "guard"

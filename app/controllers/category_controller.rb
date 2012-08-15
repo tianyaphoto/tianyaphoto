@@ -6,6 +6,14 @@ class CategoryController < ApplicationController
     category_id = params[:cat_id] || 0
   end
 
+  def new
+    @category = Category.new
+  end
+
+  def create
+
+  end
+
   def show
     id = params[:id]
     parent = Category.find_by_id id

@@ -1,0 +1,21 @@
+<%= form_for(@category, :html => {:class => "form-horizontal"}) do |f| %>
+  <%= render "share/error_message", :target => @category %>
+  <fieldset>
+    <legend>修改分类</legend>
+    <div class="control-group">
+      <%= f.label :name, "分类名称", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name, :class => "input-xlarge" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label "parent_id", "上级分类", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :parent_id, :class => "input-xlarge" %>
+      </div>
+    </div>
+    <div class='form-actions'>
+      <%= f.submit "提交分类", :class => "btn btn-primary" %>
+    </div>
+  </fieldset>
+<% end -%>

@@ -1,16 +1,16 @@
 <div class="row">
   <div class="span7">
-      <div class="breadcrumb">
-        图片分类: 
-        <%= @cates.reverse.collect(&:name).join("  >  ") %>
+    <div class="breadcrumb">
+      图片分类: 
+      <%= @cates.reverse.collect(&:name).join("  >  ") %>
+    </div>
+    <div class="thumbnail">
+      <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
+      <div class="caption">
+        <h5>网站申明</h5>
+        <p>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。</p>
       </div>
-      <div class="thumbnail">
-        <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
-        <div class="caption">
-          <h5>网站申明</h5>
-          <p>本网是正版商业图库，未经权利人许可，任何人不得随意使用本网站的原创作品（含预览图），否则将按照我国著作权法的相关规定被要求承担最高达50万元人民币的赔偿责任。</p>
-        </div>
-      </div>
+    </div>
   </div>
   <div class="span5">
     <div class="breadcrumb">
@@ -58,6 +58,11 @@
         <span><%= t.name %></span>
       <% end  %>
       </p>
+    </div>
+    
+    <div class="box">
+      <h6>图片分享</h6>
+      <%= social_share_button_tag("图片分享") %>
     </div>
 
   </div>
