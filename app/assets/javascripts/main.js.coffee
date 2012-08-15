@@ -11,5 +11,5 @@ $ ->
 		$(this).parent().fadeTo('normal', 0)?.hide()
 
 	$(window).bind "scroll", () ->
-		if $(document).scrollTop() + $(window).height() > $(document).height() - 20
+		if typeof(ajax_load) != 'undefined' && ajax_load == true && $(document).scrollTop() + $(window).height() > $(document).height() - 20
 		  ajax_get_data()

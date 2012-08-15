@@ -11,7 +11,7 @@ class Photo < ActiveRecord::Base
 
   #attr_accessible :content, :file, :isanimal, :tag_list
   
-  validates :content,:presence => true, :length => { :minimum => 25 }
+  validates :content,:presence => true, :length => { :minimum => 10 }
 
   belongs_to :user
   belongs_to :category
