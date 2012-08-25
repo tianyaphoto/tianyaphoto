@@ -55,6 +55,9 @@ gem 'bootstrap_helper', "1.4.1"
 gem 'social-share-button'
 
 group :development, :test do
+  gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'database_cleaner'
 	gem "guard"
 	gem "guard-livereload"
 	gem "rack-livereload"

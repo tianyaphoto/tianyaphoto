@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*- 
 class CategoryController < ApplicationController
-  before_filter :init_categories 
+  before_filter :init_categories, :authenticate_user! 
 
   def index
     category_id = params[:cat_id] || 0
