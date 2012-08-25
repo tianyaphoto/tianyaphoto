@@ -1,48 +1,57 @@
-<div id="subnav">
-  <h3>分类检索图片</h3>
-  <p class="byline">收录了所有的野生动植物的分类</p>
-  <div class="line">
-    <label>第一级分类</label>:
-    <div class="line-m">
-      <% @first.each do |obj| %> 
-        <%=link_to obj.name, category_path(obj)  %> 
-      <% end %>
+<div class="container">
+  <div class="row-fluid">
+    <div class="span3">
+      <div id="nav">
+        <h3>分类检索图片</h3>
+        <p class="byline">收录了所有的野生动植物的分类</p>
+        <div class="line">
+          <label>第一级分类</label>:
+          <div class="line-m">
+            <% @first.each do |obj| %> 
+            <%=link_to obj.name, category_path(obj)  %> 
+            <% end %>
+          </div>
+        </div>
+        <% if @second %>
+        <div class="line">
+          <label>下级分类:</label>
+          <div class="line-m">
+            <% @second.each do |obj|%>
+            <%=link_to obj.name, category_path(obj)  %> 
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+        <% if @third %>
+        <div class="line">
+          <label>下级分类:</label>
+          <div class="line-m">
+            <% @third.each do |obj|%>
+            <%=link_to obj.name, category_path(obj)  %> 
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="sub-nav2">
+        <label>您选中的分类是:</label>
+        <span><%=@current.try(:name) %></span>
+      </div>
+      
+    </div>
+    <div class="span9">
+      <div id="content" class="masonry">
+        <% @photos.each do |obj| %>
+        <div class="image_pane box">
+          <a href="<%=photo_path(obj) %>" >
+            <img src="<%=obj.file.url(:thumb)  %>" />
+          </a>
+          <p>
+            <%=obj.content  %>
+          </p>
+        </div>
+        <% end if @photos %>
+      </div>
     </div>
   </div>
-  <% if @second %>
-    <div class="line">
-      <label>下级分类:</label>
-      <div class="line-m">
-        <% @second.each do |obj|%>
-          <%=link_to obj.name, category_path(obj)  %> 
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-  <% if @third %>
-    <div class="line">
-      <label>下级分类:</label>
-      <div class="line-m">
-        <% @third.each do |obj|%>
-          <%=link_to obj.name, category_path(obj)  %> 
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
-<div class="sub-nav2">
-  <label>您选中的分类是:</label>
-  <span><%=@current.try(:name) %></span>
-</div>
-<div id="content" class="masonry">
-  <% @photos.each do |obj| %>
-    <div class="image_pane box">
-      <a href="<%=photo_path(obj) %>" >
-        <img src="<%=obj.file.url(:thumb)  %>" />
-      </a>
-      <p>
-      <%=obj.content  %>
-      </p>
-    </div>
-  <% end if @photos %>
 </div>

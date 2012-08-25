@@ -1,9 +1,12 @@
-<div class="row">
-  <div class="span7">
-    <div class="breadcrumb">
+<div class="row-fluid">
+    <div class="span12 breadcrumb">
+      <span class="icon-picture"></span>图片信息
       图片分类: 
       <%= @cates.reverse.collect(&:name).join("  >  ") %>
     </div>
+</div>
+<div class="row">
+  <div class="span7">
     <div class="thumbnail">
       <%= image_tag  @photo.file.url, :alt => "#{@photo.content}", :width => "640px"  %>
       <div class="caption">
@@ -13,9 +16,6 @@
     </div>
   </div>
   <div class="span5">
-    <div class="breadcrumb">
-      <span class="icon-picture"></span>图片信息
-    </div>
     <ul class="photo_message box">
       <li>
       <h6>版权所有</h6>
@@ -47,8 +47,8 @@
     </ul>
     <div class="box">
       <h6>下载图片</h6>
-      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn  btn-primary">下载</a>
-      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn  btn-danger">购买大图</a>
+      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn  btn-primary">下载大图</a>
+      <a href="<%=image_path @photo.file.url  %>" target="_blank" class="btn  btn-danger">购买原图</a>
     </div>
 
     <div class="box">
