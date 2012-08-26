@@ -1,9 +1,10 @@
 <div class="row-fluid">
-    <div class="span12 breadcrumb">
-      <span class="icon-picture"></span>图片信息
-      图片分类: 
-      <%= @cates.reverse.collect(&:name).join("  >  ") %>
-    </div>
+  <div class="span12 breadcrumb">
+    <span class="icon-picture"></span>图片信息
+    图片分类: 
+    <%= @cates.reverse.collect(&:name).join("  >  ") %>
+  </div>
+
 </div>
 <div class="row">
   <div class="span7">
@@ -59,7 +60,7 @@
       <% end  %>
       </p>
     </div>
-    
+
     <div class="box">
       <h6>图片分享</h6>
       <%= social_share_button_tag("图片分享") %>

@@ -1,57 +1,39 @@
-<div class="container">
-  <div class="row-fluid">
-    <div class="span3">
-      <div id="nav">
-        <h3>分类检索图片</h3>
-        <p class="byline">收录了所有的野生动植物的分类</p>
-        <div class="line">
-          <label>第一级分类</label>:
-          <div class="line-m">
-            <% @first.each do |obj| %> 
-            <%=link_to obj.name, category_path(obj)  %> 
-            <% end %>
-          </div>
-        </div>
-        <% if @second %>
-        <div class="line">
-          <label>下级分类:</label>
-          <div class="line-m">
-            <% @second.each do |obj|%>
-            <%=link_to obj.name, category_path(obj)  %> 
-            <% end %>
-          </div>
-        </div>
-        <% end %>
-        <% if @third %>
-        <div class="line">
-          <label>下级分类:</label>
-          <div class="line-m">
-            <% @third.each do |obj|%>
-            <%=link_to obj.name, category_path(obj)  %> 
-            <% end %>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <div class="sub-nav2">
-        <label>您选中的分类是:</label>
-        <span><%=@current.try(:name) %></span>
-      </div>
-      
-    </div>
-    <div class="span9">
-      <div id="content" class="masonry">
+<div class="row">
+  <div class="span3 ">
+    <h3>分类检索图片</h3>
+    <ul class="nav nav-pills nav-stacked">
+      <li class='active'><a href="#">野生动物</a>
+      <ul class="nav nav-pills nav-list">
+        <% @second.each do |cat| %>
+          <li><a href="#"><%=cat.name %></a></li>
+        <% end -%>
+      </ul>
+      </li>
+      <hr/>
+      <li><a href="#">野生植物</a></li>
+    </ul>
+  </div>
+  <div class="span9">
+    <% if @photos.empty? %>
+      <p class="lead">没有找到您需要的图片</p>
+    <% else %>
+      <ul id="content" class="thumbnails">
         <% @photos.each do |obj| %>
-        <div class="image_pane box">
-          <a href="<%=photo_path(obj) %>" >
-            <img src="<%=obj.file.url(:thumb)  %>" />
-          </a>
-          <p>
-            <%=obj.content  %>
-          </p>
-        </div>
-        <% end if @photos %>
-      </div>
-    </div>
+          <li class="span3 pane">
+          <div class="thumbnail">
+            <a href="/photos/<%=obj.id %>"><img alt="" src="<%=obj.file.url(:thumb)  %>" width="260" height="180"></a>
+            <div class="caption">
+              <h5><%=obj.category.name %></h5>
+              <p> <%=obj.content  %></p>
+            </div>
+          </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+  var ajax_load = true;
+</script>

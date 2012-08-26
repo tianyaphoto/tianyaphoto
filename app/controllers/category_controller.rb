@@ -1,9 +1,19 @@
 # -*- encoding: utf-8 -*- 
 class CategoryController < ApplicationController
-  before_filter :init_categories, :authenticate_user! 
+  before_filter :authenticate_user!, :only => [:new, :create] 
+  before_filter :init_categories, :only => [:index, :show]
 
   def index
+    number = 16
+    page = params[:page] || 1
     category_id = params[:cat_id] || 0
+    #category_ids = @second.collect(&:id)
+    category_ids = Category.select(:id).all.collect(&:id)
+    @photos = Photo.where("category_id in (?)", category_ids).
+              paginate(:page => page).
+              order("created_at DESC").
+              all 
+    #@photos = Photo.order("created_at DESC").all
   end
 
   def new
@@ -40,6 +50,7 @@ class CategoryController < ApplicationController
   private
   def init_categories
     @first = Category.roots
+    @second = @first.first.children
   end
 
 end
